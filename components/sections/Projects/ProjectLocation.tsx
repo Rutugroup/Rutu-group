@@ -130,7 +130,9 @@ export default function ProjectLocation({
                       <p className="font-medium text-[#115e71]">
                         {landmark.name}
                       </p>
-                      <p className="text-sm text-gray-600">{landmark.distance}</p>
+                      <p className="text-sm text-gray-600">
+                        {landmark.distance}
+                      </p>
                     </div>
                   </div>
                 ))}

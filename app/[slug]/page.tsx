@@ -131,6 +131,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               typeof landmark.icon === "string" && landmark.icon.includes("/")
                 ? "image"
                 : "lucide",
+            category: "Connectivity", // Add a default category here
           }))}
         />
       </div>

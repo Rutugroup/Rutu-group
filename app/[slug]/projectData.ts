@@ -9,6 +9,7 @@ import {
   Bus,
   TrainFront,
 } from "lucide-react";
+
 interface Amenity {
   name: string;
   icon: string;
@@ -16,6 +17,7 @@ interface Amenity {
   backImage: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface Landmark {
   name: string;
   icon: string | LucideIcon;
@@ -25,12 +27,16 @@ interface Landmark {
 }
 
 interface Location {
-  address: string;
   mapLink: string;
-  mapSource?: {
-    src: string; // Only the image source
-  };
-  landmarks: Landmark[];
+  address: string;
+  mapSource?: { src: string };
+  landmarks: {
+    name: string;
+    icon: string | LucideIcon;
+    type: "image" | "lucide";
+    distance: string;
+    category: "Connectivity" | "Health" | "Shopping" | "Education";
+  }[];
 }
 
 interface QRCode {
