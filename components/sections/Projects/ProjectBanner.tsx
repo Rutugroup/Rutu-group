@@ -60,7 +60,7 @@ export default function ProjectBanner({
   // Handle mobile detection with a proper resize listener
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth < 768);
     };
 
     // Set initial value
@@ -74,6 +74,15 @@ export default function ProjectBanner({
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    console.log("Device state:", {
+      isMobile,
+      mobileImageSrc,
+      imageSrc,
+      selectedImage: isMobile && mobileImageSrc ? mobileImageSrc : imageSrc,
+    });
+  }, [isMobile, mobileImageSrc, imageSrc]);
 
   const scrollToSection = (
     ref: React.RefObject<HTMLDivElement>,
@@ -181,7 +190,7 @@ export default function ProjectBanner({
                 fill
                 priority
                 className="object-cover"
-                sizes="100vw"
+                sizes={isMobile ? "100vw" : "100vw"}
                 style={{ objectPosition: "center" }}
               />
             </div>
