@@ -30,7 +30,7 @@ export default function MobileNav() {
               alt="Logo"
               width={48}
               height={48}
-              className="h-12 w-auto"
+              className="h-14 w-auto"
             />
           </Link>
 
@@ -57,11 +57,11 @@ export default function MobileNav() {
         {/* Header with Close Button */}
         <div className="flex items-center justify-between p-4 border-b">
           <Image
-            src="/images/logo-placeholder.png"
+            src="/images/rutu-logo-white.png"
             alt="Logo"
             width={40}
             height={40}
-            className="h-10 w-auto"
+            className="h-14 w-auto"
           />
           <button onClick={() => setIsOpen(false)} className="text-3xl">
             <X />
@@ -70,16 +70,14 @@ export default function MobileNav() {
 
         {/* Navigation Links */}
         <ul className="p-6 space-y-4 font-medium">
-          {[
-            "Our Story",
-            "Our Impact",
-            "Our Projects",
-            "Careers",
-            "Refer a Friend",
-          ].map((item, index) => (
+          {["Our Story", "Our Impact", "Our Projects"].map((item, index) => (
             <li key={index}>
               <Link
-                href={`/${item.toLowerCase().replace(/ /g, "-")}`}
+                href={
+                  item === "Our Projects"
+                    ? "/projects"
+                    : `/${item.toLowerCase().replace(/ /g, "-")}`
+                }
                 className="block hover:text-brand-gold"
                 onClick={() => setIsOpen(false)}
               >
@@ -97,7 +95,6 @@ export default function MobileNav() {
           >
             Enquire
           </button>
-          <button className="text-brand-gold font-semibold">Call</button>
         </div>
       </div>
 
