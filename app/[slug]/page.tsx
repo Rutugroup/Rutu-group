@@ -85,7 +85,8 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       <ProjectBanner
         title={project.title}
         videoSrc={project.bannerVideo}
-        imageSrc={project.bannerImage} // Added this line to pass the banner image
+        imageSrc={project.bannerImage}
+        mobileImageSrc={project.mobileBannerImage} // Added this line to pass the mobile banner image
         sectionRefs={{
           overview: overviewRef,
           amenities: amenitiesRef,
