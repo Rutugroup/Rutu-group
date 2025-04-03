@@ -75,7 +75,7 @@ const projectsData: Record<string, Project> = {
     bannerImage:
       "/images/projects/rutu-heights-kalyan/banners/heights-banner.png",
     mobileBannerImage:
-      "/images/projects/rutu-heights-kalyan/banners/mob-banner.jpg",
+      "/images/projects/rutu-heights-kalyan/banners/mob-banner.jpg  ",
     projectImage: [
       "/images/projects/rutu-heights-kalyan/elevations/rutu-heights.webp",
       "/images/projects/rutu-heights-kalyan/elevations/elevation-1.webp",

@@ -1,5 +1,7 @@
 "use client";
 
+import type React from "react";
+
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import ContactForm from "../../ui/navigation/forms/ContactForm"; // Adjust the import path as needed
@@ -148,12 +150,6 @@ export default function ProjectBanner({
     };
   }, [sectionRefs]);
 
-  // Determine which image to display based on device width
-  const currentImageSrc =
-    isMobile && mobileImageSrc
-      ? mobileImageSrc
-      : imageSrc || "/fallback-image.jpg";
-
   const bannerHeight = `calc(100vh - ${navbarHeight}px)`;
 
   return (
@@ -176,7 +172,11 @@ export default function ProjectBanner({
           ) : (
             <div className="relative w-full h-full">
               <Image
-                src={currentImageSrc}
+                src={
+                  isMobile && mobileImageSrc
+                    ? mobileImageSrc
+                    : imageSrc || "/fallback-image.jpg"
+                }
                 alt="Banner"
                 fill
                 priority
