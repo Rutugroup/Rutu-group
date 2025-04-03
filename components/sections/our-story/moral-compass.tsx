@@ -33,7 +33,7 @@ export default function MoralCompass() {
         </div>
 
         {/* Who We Are Section - Background Image */}
-        <div className="relative w-full overflow-hidden rounded-lg h-[600px]">
+        <div className="relative w-full overflow-hidden rounded-lg h-[750px]">
           {/* Desktop Background Image */}
           <div className="hidden md:block absolute inset-0 w-full h-full">
             <Image
