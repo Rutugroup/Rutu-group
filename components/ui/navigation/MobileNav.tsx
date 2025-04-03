@@ -69,34 +69,29 @@ export default function MobileNav() {
 
         {/* Navigation Links */}
         <ul className="p-6 space-y-4 font-medium">
-          {["Our Story", "Our Impact", "Our Projects"].map((item, index) => (
-            <li key={index}>
-              <Link
-                href={
-                  item === "Our Projects"
-                    ? "/projects"
-                    : `/${item.toLowerCase().replace(/ /g, "-")}`
-                }
-                className="block hover:text-brand-gold"
-                onClick={() => setIsOpen(false)}
-              >
-                {item}
-              </Link>
-            </li>
-          ))}
+          {["Our Story", "Our Impact", "Our Projects", "Directors"].map(
+            (item, index) => (
+              <li key={index}>
+                <Link
+                  href={
+                    item === "Our Projects"
+                      ? "/projects"
+                      : item === "Directors"
+                      ? "/directors"
+                      : `/${item.toLowerCase().replace(/ /g, "-")}`
+                  }
+                  className="block hover:text-brand-gold"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item}
+                </Link>
+              </li>
+            )
+          )}
         </ul>
 
         {/* Bottom Buttons */}
-        <div className="absolute bottom-0 w-full p-4 border-t flex justify-around bg-white">
-          {/* 
-          <button
-            onClick={handleModalOpen}
-            className="text-[#115e71] font-semibold"
-          >
-            Enquire
-          </button>
-          */}
-        </div>
+        <div className="absolute bottom-0 w-full p-4 border-t flex justify-around bg-white"></div>
       </div>
 
       {/* Modal with ContactForm */}
