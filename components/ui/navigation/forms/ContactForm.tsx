@@ -338,8 +338,8 @@ export default function ContactForm({
   };
 
   return (
-    <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
-      <div className="bg-white p-8 rounded-lg w-full max-w-md relative shadow-lg">
+    <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50 px-4 sm:px-0">
+      <div className="bg-white p-4 sm:p-8 rounded-lg w-full max-w-md relative shadow-lg mx-2 sm:mx-0">
         {/* Close Button (X) */}
         <button
           type="button"
