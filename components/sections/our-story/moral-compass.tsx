@@ -18,7 +18,9 @@ export default function MoralCompass() {
                 and Environment.
               </p>
             </div>
-            <div className="w-full md:w-1/2 flex flex-wrap gap-4 p-8 justify-center items-center">
+
+            {/* Adjusted Image Section for Mobile - Reduced padding and spacing */}
+            <div className="w-full md:w-1/2 flex p-0 pb-2 md:p-8 justify-center items-center">
               <AnimatedImage
                 src="/images/about/moral-sec.jpeg"
                 alt="Moral Compass"
@@ -46,7 +48,7 @@ export default function MoralCompass() {
           {/* Mobile Background Image */}
           <div className="md:hidden absolute inset-0 w-full h-full">
             <Image
-              src="/mnt/data/image.png"
+              src="/images/about/About-corporate-office-mob.png"
               alt="Corporate Office Mobile"
               fill
               className="object-cover"
@@ -75,7 +77,7 @@ export default function MoralCompass() {
               <p className="hidden md:block text-gray-700 mb-4">
                 We focus on meticulous planning and strategizing to ensure a
                 timely delivery of high-quality projects that boast of amenities
-                and strives to exceed our customer’s expectations. Our
+                and strives to exceed our customer&apos;s expectations. Our
                 achievements have been a testament to our dedication and
                 collaborative efforts.
               </p>

@@ -34,10 +34,12 @@ export default function ProjectBanner({
   const bannerRef = useRef<HTMLElement>(null);
   const lastScrollTop = useRef(0);
 
+  // Determine if we should show video based on videoSrc
   useEffect(() => {
     setShowVideo(!!videoSrc && videoSrc.trim() !== "");
-  }, [videoSrc, imageSrc]);
+  }, [videoSrc]);
 
+  // Calculate navbar height on mount and resize
   useEffect(() => {
     const calculateNavbarHeight = () => {
       const mainNavbar = document.querySelector("header");
@@ -50,6 +52,24 @@ export default function ProjectBanner({
     window.addEventListener("resize", calculateNavbarHeight);
     return () => {
       window.removeEventListener("resize", calculateNavbarHeight);
+    };
+  }, []);
+
+  // Handle mobile detection with a proper resize listener
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Set initial value
+    handleResize();
+
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -120,27 +140,21 @@ export default function ProjectBanner({
       lastScrollTop.current = scrollTop;
     };
 
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    window.addEventListener("resize", handleResize);
     window.addEventListener("scroll", handleScroll);
-
-    handleResize();
     handleScroll();
 
     return () => {
-      window.removeEventListener("resize", handleResize);
       window.removeEventListener("scroll", handleScroll);
     };
   }, [sectionRefs]);
 
-  // **Updated Code: Fixing the Image Type Issue**
-  const currentImage =
+  // Determine which image to display
+  // Make sure we actually use the mobile image when on mobile devices
+  const displayImage =
     isMobile && mobileImageSrc
       ? mobileImageSrc
-      : imageSrc ?? "/fallback-image.jpg";
+      : imageSrc || "/fallback-image.jpg";
+
   const bannerHeight = `calc(100vh - ${navbarHeight}px)`;
 
   return (
@@ -163,12 +177,12 @@ export default function ProjectBanner({
           ) : imageSrc ? (
             <div className="relative w-full h-full">
               <Image
-                src={currentImage}
+                src={displayImage}
                 alt="Banner"
                 fill
                 priority
-                className="object-contain md:object-cover"
-                sizes="100vw"
+                className="object-cover"
+                sizes={isMobile ? "100vw" : "100vw"}
                 style={{ objectPosition: "center" }}
               />
             </div>
@@ -183,10 +197,10 @@ export default function ProjectBanner({
 
       <div
         ref={secondNavRef}
-        className="w-full bg-white p-6 shadow-md z-40 transition-all duration-300"
+        className="w-full bg-white p-3 md:p-6 shadow-md z-40 transition-all duration-300"
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex space-x-4 overflow-x-auto w-full md:w-auto">
+          <div className="flex space-x-3 md:space-x-4 overflow-x-auto w-full md:w-auto">
             {[
               { label: "Overview", ref: sectionRefs.overview },
               { label: "Amenities", ref: sectionRefs.amenities },
@@ -199,7 +213,7 @@ export default function ProjectBanner({
                 onClick={() =>
                   scrollToSection(item.ref, item.label.toLowerCase())
                 }
-                className={`pb-2 border-b-2 transition-all text-lg md:text-xl ${
+                className={`pb-1 md:pb-2 border-b-2 transition-all text-sm md:text-xl ${
                   activeSection === item.label.toLowerCase()
                     ? "text-[#115e71] border-[#115e71] font-semibold"
                     : "text-gray-500 hover:text-[#115e71] border-transparent hover:border-[#115e71]"

@@ -31,7 +31,7 @@ export default function AboutSection() {
               src="/images/about/about-sec.jpg"
               alt="Luxury Interior"
               width={500}
-              height={300}
+              height={250}
               className="rounded-lg w-full"
             />
           </div>
@@ -39,14 +39,14 @@ export default function AboutSection() {
 
         {/* Text Content */}
         <div className="space-y-2 md:space-y-4 pb-8 md:pb-0 -mt-2 md:mt-0">
-          <h2 className="text-4xl md:text-5xl text-[#115e71] font-semibold -mt-1 md:mt-0 mb-4 md:mb-4">
+          <h2 className="text-3xl md:text-4xl text-[#115e71] font-semibold -mt-1 md:mt-0 mb-4 md:mb-4 text-center md:text-left">
             Our Story
           </h2>
-          <p className="font-['Cormorant_Garamond'] text-xl text-gray-700">
+          <p className="font-['Cormorant_Garamond'] text-xl text-gray-700 text-center md:text-left">
             Four Decades of Homes & Happiness
           </p>
           <motion.p
-            className="font-roboto text-base text-gray-600 mt-1 md:mt-4"
+            className="font-roboto text-base text-gray-600 mt-1 md:mt-4 text-center md:text-left"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}

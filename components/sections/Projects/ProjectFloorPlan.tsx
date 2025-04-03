@@ -30,7 +30,7 @@ export default function ProjectFloorPlan({
     <section className="py-16">
       <div className="max-w-7xl mx-auto px-4">
         {/* Add text-center to center the Plan heading */}
-        <h2 className="text-4xl md:text-5xl font-bold text-[#115e71] mb-4 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#115e71] mb-4 text-center">
           Plan
         </h2>
         {/* Title divider inspired by the image */}

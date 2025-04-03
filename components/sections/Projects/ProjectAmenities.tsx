@@ -55,7 +55,7 @@ export default function ProjectAmenities({ amenities }: ProjectAmenitiesProps) {
 
       <div className="max-w-7xl mx-auto px-8 relative z-10">
         {/* Center the heading with text-center */}
-        <h2 className="text-4xl md:text-6xl font-bold text-[#115e71] mb-4 relative text-center">
+        <h2 className="text-4xl md:text-5xl font-bold text-[#115e71] mb-4 relative text-center">
           {" "}
           {/* Added pb-6 */}
           Amenities
@@ -77,10 +77,13 @@ export default function ProjectAmenities({ amenities }: ProjectAmenitiesProps) {
           {/* Added mt-6 */}
           {amenities.slice(0, 6).map((amenity, index) => (
             <div key={index} className="flex flex-col items-center">
-              <FlipCard
-                frontImage={amenity.frontImage}
-                backIcon={amenity.icon || "/placeholder.svg"}
-              />
+              {/* Added mobile specific class for FlipCard size */}
+              <div className="w-full sm:w-auto scale-90 sm:scale-100">
+                <FlipCard
+                  frontImage={amenity.frontImage}
+                  backIcon={amenity.icon || "/placeholder.svg"}
+                />
+              </div>
               <p className="text-center font-bold text-gray-700 text-xl mt-6">
                 {amenity.name}
               </p>

@@ -11,6 +11,7 @@ import ProjectGallery from "@/components/sections/Projects/ProjectGallery";
 import ProjectQrCode from "@/components/sections/Projects/ProjectQrCode";
 import RoomFeatures from "@/components/sections/Projects/RoomFeatures";
 import projectsData from "@/app/[slug]/projectData";
+import { LucideIcon } from "lucide-react";
 
 // Define the type for projectsData
 interface ProjectData {
@@ -20,6 +21,7 @@ interface ProjectData {
   description: string;
   bannerVideo: string;
   bannerImage: string;
+  mobileBannerImage: string; // Added this property
   projectImage: string | string[]; // Updated to support array of images
   amenities: {
     name: string;
@@ -34,9 +36,15 @@ interface ProjectData {
     mapLink: string;
     address: string;
     mapSource?: { src: string }; // Make it optional
-    landmarks: { name: string; icon: string; distance: string }[];
+    landmarks: {
+      name: string;
+      icon: string | LucideIcon; // Update to allow for component type
+      type?: "image" | "lucide"; // Make type optional as we'll set it
+      distance: string;
+      category: "Connectivity" | "Health" | "Shopping" | "Education"; // Include category
+    }[];
   };
-  gallery: string[];
+  gallery?: string[]; // Make gallery optional
   qrCode: {
     image: string;
     maharera: string;
@@ -131,13 +139,15 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               typeof landmark.icon === "string" && landmark.icon.includes("/")
                 ? "image"
                 : "lucide",
-            category: "Connectivity", // Add a default category here
+            // Keep the original category from the data instead of setting all to "Connectivity"
           }))}
         />
       </div>
 
       <div ref={galleryRef} id="gallery-section">
-        <ProjectGallery images={project.gallery} />
+        {project.gallery && project.gallery.length > 0 && (
+          <ProjectGallery images={project.gallery} />
+        )}
       </div>
 
       <ProjectQrCode

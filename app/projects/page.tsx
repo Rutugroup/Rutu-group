@@ -178,7 +178,7 @@ export default function ProjectsPage() {
         <div className="flex justify-center gap-4 mb-10">
           <button
             onClick={() => setActiveTab("ongoing")}
-            className={`px-8 py-3 rounded-full text-lg font-medium transition-all ${
+            className={`px-8 py-3 rounded-full text-md md:text-lg font-light md:font-medium transition-all ${
               activeTab === "ongoing"
                 ? "bg-[#115e71] text-white"
                 : "bg-gray-100 text-gray-700 hover:bg-gray-200"
@@ -188,7 +188,7 @@ export default function ProjectsPage() {
           </button>
           <button
             onClick={() => setActiveTab("completed")}
-            className={`px-8 py-3 rounded-full text-lg font-medium transition-all ${
+            className={`px-8 py-3 rounded-full text-md md:text-lg font-light md:font-medium transition-all ${
               activeTab === "completed"
                 ? "bg-[#115e71] text-white"
                 : "bg-gray-100 text-gray-700 hover:bg-gray-200"

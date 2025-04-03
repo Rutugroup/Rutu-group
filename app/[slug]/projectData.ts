@@ -221,9 +221,9 @@ const projectsData: Record<string, Project> = {
       ],
     },
     gallery: [
-      "/images/projects/rutu-heights-kalyan/gallery/gallery-1.jpg",
-      "/images/projects/rutu-heights-kalyan/gallery/gallery-2.jpg",
-      "/images/projects/rutu-heights-kalyan/gallery/gallery-3.jpg",
+      // "/images/projects/rutu-heights-kalyan/gallery/gallery-1.jpg",
+      // "/images/projects/rutu-heights-kalyan/gallery/gallery-2.jpg",
+      // "/images/projects/rutu-heights-kalyan/gallery/gallery-3.jpg",
     ],
     qrCode: {
       image:

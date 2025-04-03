@@ -123,7 +123,7 @@ export default function AwardsSection() {
                         onClick={() => goToSlide(index)}
                         className={`w-2.5 h-2.5 rounded-full ${
                           index === currentIndex
-                            ? "bg-[#e1bc6a]"
+                            ? "bg-[#115e71]"
                             : "bg-gray-500"
                         }`}
                       ></button>

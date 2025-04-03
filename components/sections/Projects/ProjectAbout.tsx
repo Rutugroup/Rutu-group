@@ -118,13 +118,13 @@ export default function ProjectAbout({
 
           {/* Text Content */}
           <div>
-            <h2 className="text-3xl md:text-4xl font-semibold text-[#115e71] mb-6 md:mb-6 font-roboto">
+            <h2 className="text-3xl md:text-4xl font-semibold text-center md:text-left text-[#115e71] mb-6 md:mb-6 font-roboto">
               {subtitle}
             </h2>
-            <p className="text-md md:text-lg text-gray-500 mb-8 md:mb-4">
+            <p className="text-md md:text-lg text-gray-500 text-center md:text-left mb-8 md:mb-4">
               MahaRERA No.: <span className="text-[#e1bc6a]">{maharera}</span>
             </p>
-            <p className="text-gray-700 leading-relaxed text-lg">
+            <p className="text-gray-700 leading-relaxed text-center md:text-left text-lg">
               {description}
             </p>
           </div>
