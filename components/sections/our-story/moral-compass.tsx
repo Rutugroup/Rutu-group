@@ -33,7 +33,7 @@ export default function MoralCompass() {
         </div>
 
         {/* Who We Are Section - Background Image */}
-        <div className="relative w-full overflow-hidden rounded-lg md:h-auto h-[500px]">
+        <div className="relative w-full overflow-hidden rounded-lg h-[600px]">
           {/* Desktop Background Image */}
           <div className="hidden md:block absolute inset-0 w-full h-full">
             <Image
@@ -51,13 +51,13 @@ export default function MoralCompass() {
               src="/images/about/About-corporate-office-mob.png"
               alt="Corporate Office Mobile"
               fill
-              className="object-cover object-top"
+              className="object-cover"
               priority
             />
           </div>
 
-          {/* Content Overlay - Positioned in Upper Half */}
-          <div className="relative z-10 flex flex-col md:flex-row bg-opacity-70 p-8 md:p-12 md:h-auto h-auto max-h-[50%]">
+          {/* Content Overlay - Positioned in Upper Half Only */}
+          <div className="relative z-10 flex flex-col md:flex-row bg-opacity-70 p-8 md:p-12 h-1/2">
             <div className="w-full md:w-1/2 flex flex-col justify-start md:justify-center">
               <h2 className="text-2xl md:text-3xl font-semibold text-gray-700 mb-2">
                 What Makes Us Who We Are
