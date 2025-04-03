@@ -7,8 +7,8 @@ import ContactForm from "../../ui/navigation/forms/ContactForm"; // Adjust the i
 interface ProjectBannerProps {
   title: string;
   videoSrc?: string;
-  imageSrc?: string; // Made optional to handle missing image
-  mobileImageSrc?: string;
+  imageSrc?: string; // Banner image for desktop
+  mobileImageSrc?: string; // Banner image for mobile
   sectionRefs: {
     overview: React.RefObject<HTMLDivElement>;
     amenities: React.RefObject<HTMLDivElement>;
@@ -148,9 +148,8 @@ export default function ProjectBanner({
     };
   }, [sectionRefs]);
 
-  // Determine which image to display
-  // Make sure we actually use the mobile image when on mobile devices
-  const displayImage =
+  // Determine which image to display based on device width
+  const currentImageSrc =
     isMobile && mobileImageSrc
       ? mobileImageSrc
       : imageSrc || "/fallback-image.jpg";
@@ -174,21 +173,17 @@ export default function ProjectBanner({
               loop
               playsInline
             />
-          ) : imageSrc ? (
+          ) : (
             <div className="relative w-full h-full">
               <Image
-                src={displayImage}
+                src={currentImageSrc}
                 alt="Banner"
                 fill
                 priority
                 className="object-cover"
-                sizes={isMobile ? "100vw" : "100vw"}
+                sizes="100vw"
                 style={{ objectPosition: "center" }}
               />
-            </div>
-          ) : (
-            <div className="absolute inset-0 flex items-center justify-center bg-White text-[#115e71] text-3xl md:text-5xl font-bold">
-              Coming Soon
             </div>
           )}
           <div className="absolute inset-0 bg-black/30"></div>

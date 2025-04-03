@@ -9,7 +9,6 @@ export default function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
 
-  const handleModalOpen = () => setModalOpen(true);
   const handleModalClose = () => setModalOpen(false);
 
   useEffect(() => {
@@ -89,12 +88,14 @@ export default function MobileNav() {
 
         {/* Bottom Buttons */}
         <div className="absolute bottom-0 w-full p-4 border-t flex justify-around bg-white">
+          {/* 
           <button
             onClick={handleModalOpen}
             className="text-[#115e71] font-semibold"
           >
             Enquire
           </button>
+          */}
         </div>
       </div>
 
