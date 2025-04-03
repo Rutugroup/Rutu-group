@@ -25,10 +25,10 @@ export default function AboutSection() {
 
         {/* Text Content - Adjusted margins */}
         <div className="space-y-2 md:space-y-4 mt-8 md:mt-0 ">
-          <h2 className="text-3xl md:text-4xl text-[#115e71] font-semibold mb-2 md:mb-4 text-center md:text-left">
+          <h2 className="text-3xl md:text-4xl text-[#115e71] font-semibold mb-4 md:mb-4 text-center md:text-left">
             Our Story
           </h2>
-          <p className="font-['Cormorant_Garamond'] text-xl text-gray-700 text-center md:text-left">
+          <p className="font-['Cormorant_Garamond'] text-xl text-gray-700 text-center md:text-left mb-4 md:mb-0">
             Four Decades of Homes & Happiness
           </p>
           <motion.p
