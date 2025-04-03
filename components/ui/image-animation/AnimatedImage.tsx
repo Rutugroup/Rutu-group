@@ -24,7 +24,7 @@ const AnimatedImage: React.FC<AnimatedImageProps> = ({
 
   return (
     <div
-      className="overflow-hidden rounded-lg w-full h-[60vh] md:h-auto flex justify-center items-center" // Ensure height on mobile and flexbox centering
+      className="overflow-hidden rounded-lg w-full md:h-auto flex justify-center items-center" // Removed fixed height for mobile
       ref={ref}
     >
       <div
@@ -39,7 +39,7 @@ const AnimatedImage: React.FC<AnimatedImageProps> = ({
           alt={alt}
           width={width}
           height={height}
-          className={`object-cover mx-auto ${className} max-w-full max-h-full`} // Ensures the image fits the container and doesn't overflow
+          className={`object-cover mx-auto ${className} max-w-full max-h-full`}
         />
       </div>
     </div>
