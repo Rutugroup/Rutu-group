@@ -732,7 +732,7 @@ const projectsData: Record<string, Project> = {
   },
   "rutu-city": {
     title: "Rutu City",
-    subtitle: "Township with 1, 2 & 3 BHK at Rutu City, Kalyan East",
+    subtitle: "Township with 2 BHK Spacious Homes, in Thane",
     maharera: "P51700079569",
     description:
       "Rutu City is a premium township project offering 1, 2 & 3 BHK homes with world-class amenities and excellent connectivity to major parts of Mumbai and Thane.",
