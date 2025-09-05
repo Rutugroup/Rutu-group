@@ -22,7 +22,10 @@ export default function HeroBanner() {
   return (
     <div
       className="relative w-full"
-      style={{ height: `calc(100vh - ${navbarHeight}px)` }} // Dynamic height
+      style={{
+        height: "100vh", // Always take full screen height
+        paddingTop: `${navbarHeight}px`, // Push hero down below navbar
+      }}
     >
       {/* Video Background */}
       <video className="w-full h-full object-cover" autoPlay loop muted>
