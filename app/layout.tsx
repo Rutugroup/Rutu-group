@@ -14,14 +14,14 @@ const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-cormorant",
-  weight: ["300", "400", "700"], // Added weights for better heading control
+  weight: ["300", "400", "700"],
 });
 
 const roboto = Roboto({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-roboto",
-  weight: ["400", "500", "700"], // More weights for paragraph and UI text
+  weight: ["400", "500", "700"],
 });
 
 export default function RootLayout({
@@ -32,17 +32,12 @@ export default function RootLayout({
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Function to check screen width
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
 
-    handleResize(); // Check on initial load
-
-    // Add event listener
+    handleResize();
     window.addEventListener("resize", handleResize);
-
-    // Cleanup event listener on unmount
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -52,11 +47,11 @@ export default function RootLayout({
       className={`${cormorant.variable} ${roboto.variable} scroll-smooth`}
     >
       <body className="min-h-screen flex flex-col font-roboto">
-        {/* Conditionally render navbar based on screen width */}
+        {/* Conditionally render navbar */}
         {isMobile ? <MobileNav /> : <MainNav />}
 
-        {/* Main Content starts below the navbar */}
-        <main className={`flex-grow ${isMobile ? "" : "pt-8"} md:pt-12`}>
+        {/* Main Content (no extra padding-top here) */}
+        <main className="flex-grow">
           {children}
         </main>
 
