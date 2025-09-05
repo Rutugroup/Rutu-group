@@ -36,7 +36,7 @@ export default function MainNav() {
           isScrolled ? "bg-black/10 backdrop-blur-xl" : "bg-black/60"
         }`}
       >
-        <nav className="container mx-auto flex items-center justify-between py-4 px-8">
+        <nav className="container mx-auto flex items-center justify-between py-2 px-8">
           {/* Left Section - Logo */}
           <div className="flex items-center p-0">
             <Link href="/" className="flex items-center">
@@ -45,7 +45,7 @@ export default function MainNav() {
                 alt="Rutu Logo"
                 width={400}
                 height={200}
-                className="h-[96px] w-auto object-contain !m-0 !p-0" // Remove all margins and padding
+                className="h-[64px] w-auto object-contain !m-0 !p-0" // Remove all margins and padding
               />
             </Link>
           </div>
