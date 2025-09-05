@@ -15,7 +15,6 @@ export default function HeroBanner() {
 
     updateNavbarHeight();
     window.addEventListener("resize", updateNavbarHeight);
-
     return () => window.removeEventListener("resize", updateNavbarHeight);
   }, []);
 
@@ -23,8 +22,8 @@ export default function HeroBanner() {
     <div
       className="relative w-full"
       style={{
-        height: "100vh", // Always take full screen height
-        paddingTop: `${navbarHeight}px`, // Push hero down below navbar
+        height: `calc(100vh - ${navbarHeight}px)`, // Full screen minus navbar
+        marginTop: `${navbarHeight}px`, // Push hero down below navbar
       }}
     >
       {/* Video Background */}
