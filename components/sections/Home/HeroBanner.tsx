@@ -23,7 +23,7 @@ export default function HeroBanner() {
       className="relative w-full"
       style={{
         height: `calc(100vh - ${navbarHeight}px)`, // Full screen minus navbar
-        marginTop: `${navbarHeight}px`, // Push hero down below navbar
+        // ❌ remove marginTop here
       }}
     >
       {/* Video Background */}
